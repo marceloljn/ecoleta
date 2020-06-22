@@ -15,6 +15,8 @@ app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 app.use(errors());
 
-app.listen(3333, () => {
-  console.log('Server started at port 3333');
+const port: string | number = process.env.PORT || 3333;
+
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });
